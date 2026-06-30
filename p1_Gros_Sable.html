@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P1 — Gros Sable · Bois Jolan</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style-panneau.css">
+  <meta name="theme-color" content="#0F2A1E">
+</head>
+<body>
+
+  <header>
+    <h1>Bois Jolan</h1>
+    <p>P1 — Synoptique Gros Sable · Helleux</p>
+  </header>
+
+  <main>
+
+    <!-- PROFIL ACTIF + BOUTON CHANGER -->
+    <div id="profil-actif"></div>
+    <button class="btn-changer" onclick="changerProfil()">↩ Changer de profil</button>
+
+    <!-- ================================ -->
+    <!-- SECTION TOURISTE -->
+    <!-- ================================ -->
+    <div id="profil-touriste" class="section-profil">
+
+      <div class="panneau-titre">
+        <h2>Bois Jolan… bien plus qu'une plage</h2>
+        <p class="sous-titre">Cinq milieux, une seule respiration. Bienvenue dans l'un des sites naturels les plus riches de Guadeloupe.</p>
+      </div>
+
+      <div class="audio-bloc">
+        <p class="audio-label">🎧 Écouter la présentation (~60 sec)</p>
+        <audio controls>
+          <source src="/assets/audio/p1-touriste-fr.mp3" type="audio/mpeg">
+          Votre navigateur ne supporte pas l'audio.
+        </audio>
+      </div>
+
+      <div class="contenu-texte">
+        <p>Ce que vous voyez en arrivant — une plage, des cocotiers, le lagon — n'est que l'entrée d'un écosystème extraordinaire.</p>
+        <p>Derrière la plage : une savane littorale en cours de replantation, où l'ONF et la Mairie de Sainte-Anne restaurent les corridors écologiques.</p>
+        <p>Plus loin à l'ouest : une mangrove dont les racines plongent dans l'eau noire. Zone de nurserie pour les poissons, filtre naturel des eaux de ruissellement, rempart contre les tempêtes.</p>
+        <p>À 400 mètres au large : une barrière de corail. 28 espèces de coraux recensées ici. C'est elle qui protège la côte — et son état conditionne celui de toute cette plage.</p>
+      </div>
+
+      <div class="especes-bloc">
+        <h3>🐢 Espèces à repérer ici</h3>
+        <ul>
+          <li><strong>Tortue verte</strong> <em>(Chelonia mydas)</em> — zone de ponte confirmée</li>
+          <li><strong>Bernard l'hermite</strong> <em>(Coenobita clypeatus)</em> — littoral sableux</li>
+          <li><strong>Pois-bord-de-mer</strong> <em>(Canavalia rosea)</em> — savane littorale</li>
+        </ul>
+      </div>
+
+      <div class="quiz-bloc">
+        <h3>🧠 Quiz — Testez-vous</h3>
+        <div id="quiz-touriste-p1"></div>
+        <button class="btn-quiz" onclick="lancerQuiz('touriste-p1')">Démarrer le quiz</button>
+      </div>
+
+    </div><!-- /profil-touriste -->
+
+    <!-- ================================ -->
+    <!-- SECTION HABITANT -->
+    <!-- ================================ -->
+    <div id="profil-habitant" class="section-profil" style="display:none">
+
+      <div class="panneau-titre">
+        <h2>Bois Jolan — notre territoire</h2>
+        <p class="sous-titre">Ce que l'ABC révèle sur le patrimoine naturel de Sainte-Anne.</p>
+      </div>
+
+      <div class="contenu-texte">
+        <p>La commune de Sainte-Anne dispose d'un Atlas de la Biodiversité Communale exceptionnel — <strong>1 461 espèces recensées</strong>, 19 198 observations terrain, réalisé par Biotope Caraïbes.</p>
+        <p>La savane littorale que vous longez est en cours de replantation active. L'ONF et la mairie restaurent les corridors écologiques pour reconnecter les milieux.</p>
+        <p>Le chemin en mangrove est dégradé. Ce n'est pas un abandon — c'est un témoignage de la pression humaine sur le milieu. Sa restauration est en réflexion.</p>
+      </div>
+
+      <div class="especes-bloc">
+        <h3>🌿 Noms créoles des espèces locales</h3>
+        <ul>
+          <li><strong>Zingzing</strong> — Tramea abdominalis (libellule des mares)</li>
+          <li><strong>Kio</strong> — Héron vert (gardien des mares)</li>
+          <li><strong>Palétivié wouj</strong> — Palétuvier rouge · cœur de la mangrove</li>
+        </ul>
+      </div>
+
+    </div><!-- /profil-habitant -->
+
+    <!-- ================================ -->
+    <!-- SECTION SCOLAIRE -->
+    <!-- ================================ -->
+    <div id="profil-scolaire" class="section-profil" style="display:none">
+
+      <div class="panneau-titre">
+        <h2>Mission terrain — Bois Jolan</h2>
+        <p class="sous-titre">Tu es en mission d'exploration. Observe, note, découvre.</p>
+      </div>
+
+      <div class="mission-bloc">
+        <h3>🔍 Ta mission</h3>
+        <ol>
+          <li>Identifie <strong>3 milieux naturels différents</strong> depuis ce point</li>
+          <li>Trouve une plante qui pousse dans le sable — note son nom</li>
+          <li>Compte les types de bruits que tu entends (vent, mer, oiseaux...)</li>
+          <li>Cherche une trace de vie animale sur la plage</li>
+          <li>Dessine la vue depuis ici sur ta fiche terrain</li>
+        </ol>
+      </div>
+
+      <div class="quiz-bloc">
+        <h3>🧩 Quiz escape game — indice n°1</h3>
+        <p>Combien de milieux naturels composent l'écosystème de Bois Jolan ?</p>
+        <p class="indice">👉 Trouve la réponse — elle te donnera le premier chiffre du code.</p>
+        <div id="quiz-scolaire-p1"></div>
+        <button class="btn-quiz" onclick="lancerQuiz('scolaire-p1')">Répondre</button>
+      </div>
+
+    </div><!-- /profil-scolaire -->
+
+    <!-- NAVIGATION -->
+    <div class="nav-panneaux">
+      <a href="/index.html">← Accueil</a>
+      <a href="/pages/p4_Etang_Lambi_Corail.html">P4 — Récif corallien →</a>
+    </div>
+
+  </main>
+
+  <script src="/app.js"></script>
+  <script>
+    // Données quiz P1
+    const quizData = {
+      'touriste-p1': [
+        { q: "Combien de milieux naturels à Bois Jolan ?", r: ["3", "4", "5", "6"], correct: 2 },
+        { q: "La mangrove joue un rôle de…", r: ["Barrière anti-tsunami", "Nurserie pour les poissons", "Réserve d'eau potable", "Zone de pêche"], correct: 1 },
+        { q: "Quel animal protégé pond sur les plages de Sainte-Anne ?", r: ["Le crocodile", "La tortue verte", "L'iguane", "Le flamant rose"], correct: 1 },
+        { q: "Combien d'espèces de coraux recensées ici ?", r: ["12", "18", "28", "45"], correct: 2 },
+        { q: "Qui a financé l'inventaire de biodiversité ?", r: ["L'UNESCO", "La Région Guadeloupe", "OFB + France Relance", "L'Europe seule"], correct: 2 }
+      ],
+      'scolaire-p1': [
+        { q: "Combien de milieux naturels à Bois Jolan ?", r: ["3", "4", "5", "7"], correct: 2 }
+      ]
+    };
+
+    function lancerQuiz(id) {
+      const data = quizData[id];
+      if (!data) return;
+      const container = document.getElementById('quiz-' + id);
+      container.innerHTML = '';
+      data.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'quiz-question';
+        div.innerHTML = `<p><strong>Q${i+1}.</strong> ${item.q}</p>` +
+          item.r.map((rep, j) =>
+            `<button class="btn-reponse" onclick="verifierReponse(this, ${j}, ${item.correct}, '${id}-q${i}')">${rep}</button>`
+          ).join('');
+        container.appendChild(div);
+      });
+    }
+
+    function verifierReponse(btn, choix, correct, id) {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('.btn-reponse').forEach(b => b.disabled = true);
+      if (choix === correct) {
+        btn.style.background = '#2D7A5F';
+        btn.style.color = 'white';
+        btn.innerHTML += ' ✅';
+      } else {
+        btn.style.background = '#C0392B';
+        btn.style.color = 'white';
+        btn.innerHTML += ' ❌';
+        parent.querySelectorAll('.btn-reponse')[correct].style.background = '#2D7A5F';
+        parent.querySelectorAll('.btn-reponse')[correct].style.color = 'white';
+      }
+    }
+  </script>
+
+</body>
+</html>

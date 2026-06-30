@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bois Jolan — Sainte-Anne</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <meta name="theme-color" content="#0F2A1E">
+</head>
+<body>
+
+  <header>
+    <h1>Bois Jolan</h1>
+    <p>Sainte-Anne · Guadeloupe</p>
+  </header>
+
+  <main>
+
+    <!-- ① ACCUEIL SENSORIEL -->
+    <div class="accueil-bloc">
+      <p class="accueil-signature">Là où la terre parle à la mer</p>
+      <p class="accueil-texte">Cinq milieux naturels interconnectés. Une barrière de corail. Une mangrove. Des mares vivantes. Une savane en cours de renaissance. Et une plage qui raconte tout cela.</p>
+    </div>
+
+    <!-- ② BADGE HORS LIGNE -->
+    <div class="hors-ligne-badge" id="badge-hors-ligne">
+      <div class="badge-icone">
+        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+          <!-- Feuille -->
+          <path d="M24 6 C14 6 8 16 8 24 C8 32 14 40 24 42 C34 40 40 32 40 24 C40 16 34 6 24 6Z"
+                fill="#2D7A5F" opacity="0.25"/>
+          <path d="M24 10 C24 10 16 20 24 34 C32 20 24 10 24 10Z"
+                fill="#2D7A5F"/>
+          <!-- Signal barré -->
+          <line x1="8" y1="8" x2="40" y2="40" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+          <path d="M18 26 Q24 20 30 26" fill="none" stroke="#C9A227" stroke-width="2.5"
+                stroke-linecap="round" opacity="0.5"/>
+          <path d="M14 22 Q24 13 34 22" fill="none" stroke="#C9A227" stroke-width="2.5"
+                stroke-linecap="round" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="badge-texte">
+        <strong>Prêt pour la zone sauvage</strong>
+        <span>Ce site fonctionne sans connexion. Tout vient de se télécharger sur votre téléphone.</span>
+      </div>
+    </div>
+
+    <!-- ③ CHOIX DE PROFIL -->
+    <div class="profil-section">
+      <h2>Qui êtes-vous ?</h2>
+      <p class="profil-invite">Votre réponse adapte le contenu à votre façon de vivre ce lieu.</p>
+
+      <div id="profils">
+        <button onclick="choisirProfil('touriste')">
+          <span class="profil-emoji">🌊</span>
+          <span class="profil-info">
+            <strong>Touriste · Visiteur</strong>
+            <em>Découverte sensorielle du site</em>
+          </span>
+        </button>
+        <button onclick="choisirProfil('habitant')">
+          <span class="profil-emoji">🌿</span>
+          <span class="profil-info">
+            <strong>Habitant de Sainte-Anne</strong>
+            <em>Mémoire locale et actualités du site</em>
+          </span>
+        </button>
+        <button onclick="choisirProfil('scolaire')">
+          <span class="profil-emoji">📚</span>
+          <span class="profil-info">
+            <strong>Scolaire · Enseignant</strong>
+            <em>Mission terrain et ressources pédagogiques</em>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ④ MESSAGE PERSONNALISÉ après choix (caché par défaut) -->
+    <div id="message-profil" class="message-profil" style="display:none"></div>
+
+    <!-- ⑤ PANNEAUX — visibles après choix de profil -->
+    <div id="navigation" class="navigation" style="display:none">
+      <h3>Votre parcours</h3>
+      <a href="/pages/p1_Gros_Sable.html">
+        <span>📍</span>
+        <span class="nav-info">
+          <strong>P1 — Synoptique Gros Sable</strong>
+          <em>Entrée du parcours · Helleux</em>
+        </span>
+      </a>
+      <a href="/pages/p4_Etang_Lambi_Corail.html">
+        <span>🪸</span>
+        <span class="nav-info">
+          <strong>P4 — Récif corallien</strong>
+          <em>Cadre de visée · Étang Lambi</em>
+        </span>
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('Service Worker enregistré ✅'))
+        .catch(err => console.error('Erreur SW :', err));
+    }
+  </script>
+  <script src="/app.js"></script>
+
+</body>
+</html>

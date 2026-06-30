@@ -1,0 +1,22 @@
+{
+  "name": "Bois Jolan — Sainte-Anne",
+  "short_name": "Bois Jolan",
+  "description": "Signalétique augmentée — Découvrez la biodiversité de Bois Jolan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F2A1E",
+  "theme_color": "#0F2A1E",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

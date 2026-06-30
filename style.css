@@ -1,0 +1,367 @@
+/* ============================================
+   STYLE.CSS — Charte visuelle Bois Jolan PWA
+   ============================================ */
+
+:root {
+  --dark:   #0F2A1E;
+  --forest: #1A4231;
+  --mint:   #2D7A5F;
+  --gold:   #C9A227;
+  --cream:  #F0EDE4;
+  --light:  #F5F2EB;
+  --muted:  #6B7A74;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, serif;
+  background: var(--dark);
+  color: var(--cream);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background: var(--forest);
+  border-bottom: 3px solid var(--gold);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--gold);
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-family: sans-serif;
+}
+
+/* MAIN */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+main h2 {
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-family: sans-serif;
+}
+
+main p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-family: sans-serif;
+}
+
+/* BOUTONS PROFIL */
+#profils {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#profils button {
+  background: var(--forest);
+  color: var(--cream);
+  border: 2px solid var(--mint);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: left;
+  min-height: 48px;
+  transition: all 0.2s;
+}
+
+#profils button:hover {
+  background: var(--mint);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+#profils button.actif {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+  font-weight: bold;
+}
+
+#profils button.actif::after {
+  content: ' ✓';
+  font-weight: bold;
+}
+
+#profils button:hover {
+  background: var(--mint);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+/* NAVIGATION PANNEAUX */
+#navigation {
+  border-top: 1px solid var(--forest);
+  padding-top: 1.5rem;
+}
+
+#navigation h3 {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+
+#navigation a {
+  display: block;
+  background: var(--forest);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  border-left: 4px solid var(--gold);
+  transition: all 0.2s;
+}
+
+#navigation a:hover {
+  background: var(--mint);
+  color: var(--dark);
+}
+
+/* PROFIL ACTIF */
+#profil-actif {
+  display: none;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-family: sans-serif;
+  font-size: 0.88rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+/* BOUTON CHANGER PROFIL */
+.btn-changer {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: sans-serif;
+  margin-top: 1rem;
+}
+
+.btn-changer:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+/* ============================================
+   ACCUEIL — nouvelles sections
+   ============================================ */
+
+/* BLOC SENSORIEL */
+.accueil-bloc {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+  border-bottom: 1px solid var(--forest);
+  margin-bottom: 1.5rem;
+}
+
+.accueil-signature {
+  color: var(--gold);
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.accueil-texte {
+  color: var(--muted);
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* BADGE HORS LIGNE */
+.hors-ligne-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--forest);
+  border: 1px solid var(--mint);
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.badge-icone {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.badge-texte strong {
+  color: var(--gold);
+  font-family: sans-serif;
+  font-size: 0.88rem;
+  display: block;
+}
+
+.badge-texte span {
+  color: var(--muted);
+  font-family: sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* SECTION PROFIL */
+.profil-section {
+  margin-bottom: 1.5rem;
+}
+
+.profil-invite {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  margin-bottom: 1.2rem;
+}
+
+/* BOUTONS PROFIL — enrichis */
+#profils button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--forest);
+  color: var(--cream);
+  border: 2px solid var(--mint);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  min-height: 64px;
+  width: 100%;
+  transition: all 0.2s;
+  margin-bottom: 0.8rem;
+}
+
+#profils button:hover {
+  background: var(--mint);
+  border-color: var(--gold);
+}
+
+.profil-emoji {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.profil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.profil-info strong {
+  font-family: sans-serif;
+  font-size: 0.95rem;
+  color: var(--cream);
+}
+
+.profil-info em {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* MESSAGE PROFIL PERSONNALISÉ */
+.message-profil {
+  background: var(--forest);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: var(--cream);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* NAVIGATION PANNEAUX — enrichie */
+.navigation h3 {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+
+.navigation a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--forest);
+  color: var(--cream);
+  text-decoration: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid var(--gold);
+  transition: all 0.2s;
+  min-height: 64px;
+}
+
+.navigation a:hover {
+  background: var(--mint);
+}
+
+.nav-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-info strong {
+  font-family: sans-serif;
+  font-size: 0.92rem;
+  color: var(--cream);
+}
+
+.nav-info em {
+  font-family: sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: normal;
+}

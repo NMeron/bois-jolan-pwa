@@ -100,11 +100,46 @@
 
   </main>
 
+  <!-- ⑥ REPÈRE DE VERSION -->
+  <p style="text-align:center;opacity:.35;font-size:.72rem;margin:2rem 0 1rem">
+    prototype v2.0.0
+  </p>
+
+  <!-- ⑦ BANNIÈRE DE MISE À JOUR -->
+  <div id="maj-banniere" style="display:none;position:fixed;bottom:0;left:0;right:0;
+       z-index:9998;background:#C9A227;color:#0F2A1E;padding:.9rem 1rem;
+       align-items:center;justify-content:space-between;gap:1rem;
+       font-size:.92rem;box-shadow:0 -2px 12px rgba(0,0,0,.3)">
+    <span>Nouvelle version disponible.</span>
+    <button onclick="location.reload()"
+            style="min-height:40px;padding:.4rem 1rem;border:none;border-radius:6px;
+                   background:#0F2A1E;color:#F0EDE4;font-weight:600;cursor:pointer">
+      Actualiser
+    </button>
+  </div>
+
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
         .then(() => console.log('Service Worker enregistré ✅'))
         .catch(err => console.error('Erreur SW :', err));
+
+      // Le Service Worker signale qu'une nouvelle version vient de s'activer
+      navigator.serviceWorker.addEventListener('message', e => {
+        if (e.data && e.data.type === 'MAJ_DISPONIBLE') {
+          const b = document.getElementById('maj-banniere');
+          if (b) b.style.display = 'flex';
+          console.log('[PWA] version active :', e.data.version);
+        }
+      });
+
+      // À chaque retour sur l'app, vérifier s'il y a du nouveau
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          navigator.serviceWorker.getRegistration()
+            .then(r => { if (r) r.update(); });
+        }
+      });
     }
   </script>
   <script src="/app.js"></script>

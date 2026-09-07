@@ -3,7 +3,7 @@
 // ⚠️ INCRÉMENTER "VERSION" À CHAQUE DÉPLOIEMENT
 // ============================================
 
-const VERSION     = '2.0.1';
+const VERSION     = '2.0.2';
 const CACHE_APP   = 'bois-jolan-app-' + VERSION;
 const CACHE_MEDIA = 'bois-jolan-media';   // non versionné : audio et photos
 
